@@ -1,0 +1,22 @@
+name: DEV Deployment 
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Donwloading the code
+        uses: actions/checkout@v4.1.7
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci    
+      - name: Build project
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploying..."
