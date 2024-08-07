@@ -1,5 +1,5 @@
 name: Deployment React App
-on: [push, workflow_dispatch]
+on: push
 jobs: 
   test:
     runs-on: ubuntu-latest
@@ -15,7 +15,7 @@ jobs:
       - name: Run tests
         run: npm test
   deploy:
-    needs: tests
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Donwloading the code
