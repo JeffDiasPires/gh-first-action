@@ -2,8 +2,8 @@ name: DEV Deployment
 on:
   push:
     branches:
-      - main
-      - 'releases/**'
+      - develop
+      - 'feature/**'
 jobs: 
   deploy:
     runs-on: ubuntu-latest
