@@ -21,4 +21,4 @@ jobs:
       - name: Deploy
         run: echo "Deploying..."
       - name: Output Guithub context
-        run: echo "$GITHUB_OUTPUT"
+        run: echo "${{ toJSON(github) }}"
