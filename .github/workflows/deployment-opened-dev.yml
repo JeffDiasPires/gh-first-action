@@ -4,7 +4,6 @@ on:
     branches:
       - develop
       - 'feature/**'
-on: issues
 jobs: 
   deploy:
     runs-on: ubuntu-latest
@@ -21,5 +20,3 @@ jobs:
         run: npm run build
       - name: Deploy
         run: echo "Deploying..."
-      - name: Output Guithub context
-        run: echo "${{ toJSON(github) }}"
