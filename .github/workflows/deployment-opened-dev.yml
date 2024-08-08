@@ -1,10 +1,10 @@
 name: DEV Deployment 
 on:
-  issues: issues
   push:
     branches:
       - develop
       - 'feature/**'
+on: issues
 jobs: 
   deploy:
     runs-on: ubuntu-latest
